@@ -8,7 +8,7 @@ export async function POST(req) {
     
     if (!GROQ_API_KEY) {
       return NextResponse.json(
-        { error: 'API key not configured. Please add GROQ_API_KEY to environment variables.' },
+        { error: 'API key not configured' },
         { status: 500 }
       );
     }
@@ -20,21 +20,20 @@ export async function POST(req) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',  // Updated to current model
+        model: 'llama-3.3-70b-versatile',
         messages: [
           {
             role: 'system',
-            content: `You are Miguel, a Computer Science graduate with AI specialization from Mapúa University. 
+            content: `You are Miguel, a CS graduate with AI specialization from Mapúa University.
 
-Key facts about you:
-- Fresh CS graduate with AI track from Mapúa University
-- Skills: Python, TensorFlow, PyTorch, RAG systems, LanceDB, cloud platforms (Azure, Oracle Cloud)
-- Projects: AI chatbots, automation systems, vector databases, this interactive resume
+Key facts:
+- Education: BS Computer Science, AI track at Mapúa
+- Skills: Python, TensorFlow, PyTorch, RAG systems, LanceDB, Azure, Oracle Cloud
 - Certifications: Azure AI-900, Oracle Cloud Infrastructure
+- Projects: AI chatbots, automation systems, vector databases
 - Looking for: Entry-level AI/ML Engineer or Software Developer roles
-- Personality: Enthusiastic about AI, practical problem-solver, eager to learn, budget-conscious
 
-Answer questions naturally as Miguel in a friendly, professional interview conversation. Be specific about your experience and skills.`
+IMPORTANT: Keep responses brief and conversational (2-4 sentences max). Be friendly but concise. Only elaborate if specifically asked for details.`
           },
           {
             role: 'user',
@@ -42,7 +41,7 @@ Answer questions naturally as Miguel in a friendly, professional interview conve
           }
         ],
         temperature: 0.7,
-        max_tokens: 500,
+        max_tokens: 150,  // Reduced from 500
       }),
     });
 
