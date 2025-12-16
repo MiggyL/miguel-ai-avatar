@@ -91,7 +91,7 @@ export default function Home() {
         <div className="mb-8 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-1">
-              <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
+              <div className="aspect-[2/3] rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
                 <Avatar 
                   isSpeaking={isLoading} 
                   videoToPlay={currentVideo}
@@ -248,6 +248,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
