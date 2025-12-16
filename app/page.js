@@ -87,12 +87,24 @@ export default function Home() {
               </div>
             </div>
             <div className="md:col-span-2 space-y-3">
-              <h2 className="text-2xl font-semibold text-gray-900">Computer Science Graduate</h2>
+              <h2 className="text-2xl font-semibold text-gray-900">Miguel Lacanienta</h2>
               <p className="text-gray-600">BS Computer Science • AI Specialization • Mapúa University</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm border border-blue-200">Python</span>
-                <span className="px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-sm border border-purple-200">Power Platform</span>
-                <span className="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-sm border border-pink-200">Azure</span>
+                <button className="px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-200 cursor-pointer">
+                  🎯 Objective
+                </button>
+                <button className="px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-medium border border-purple-200 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200 cursor-pointer">
+                  ⚡ Skills
+                </button>
+                <button className="px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium border border-green-200 hover:bg-green-100 hover:border-green-300 transition-all duration-200 cursor-pointer">
+                  🏆 Certifications
+                </button>
+                <button className="px-4 py-2 rounded-full bg-orange-50 text-orange-700 text-sm font-medium border border-orange-200 hover:bg-orange-100 hover:border-orange-300 transition-all duration-200 cursor-pointer">
+                  ✨ Applied Skills
+                </button>
+                <button className="px-4 py-2 rounded-full bg-pink-50 text-pink-700 text-sm font-medium border border-pink-200 hover:bg-pink-100 hover:border-pink-300 transition-all duration-200 cursor-pointer">
+                  💼 Projects
+                </button>
               </div>
             </div>
           </div>
@@ -220,6 +232,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
