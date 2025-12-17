@@ -2,13 +2,14 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Avatar from './components/Avatar';
-import ReactMarkdown from 'react-markdown';  // ADD THIS LINE
+import QRCode from './components/QRCode';
+import ReactMarkdown from 'react-markdown';
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState(null);  // ADD THIS
+  const [currentVideo, setCurrentVideo] = useState(null);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -88,7 +89,8 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 py-4">
         
         {/* Avatar Card - Compact */}
-        <div className="mb-6 bg-white rounded-2xl p-4 border border-gray-200 shadow-sm">
+        <div className="mb-6 bg-white rounded-2xl p-4 border border-gray-200 shadow-sm relative">
+          <QRCode />
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-1">
               <div className="aspect-[2/3] rounded-xl overflow-hidden">
@@ -255,3 +257,4 @@ export default function Home() {
     </div>
   );
 }
+
