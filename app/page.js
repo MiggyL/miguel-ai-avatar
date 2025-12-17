@@ -11,6 +11,7 @@ export default function Home() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [selectedModel, setSelectedModel] = useState('groq'); // ADD THIS
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -239,7 +240,10 @@ export default function Home() {
                 />
                     
                 {/* Model Selector */}
-                <ModelSelector />
+                <ModelSelector 
+                  selectedModel={selectedModel}
+                  onModelChange={setSelectedModel}
+                />
                         
                 {/* Send Button */}
                 <button
@@ -263,5 +267,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 
