@@ -35,7 +35,7 @@ export default function Avatar({ isSpeaking, videoToPlay, onVideoEnd }) {
   };
 
   return (
-    <div className="w-full h-full relative bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center overflow-hidden">
+    <div className="w-full h-full relative bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center overflow-hidden p-0">
       {/* Idle Loop Video */}
       <video
         ref={idleVideoRef}
@@ -67,3 +67,4 @@ export default function Avatar({ isSpeaking, videoToPlay, onVideoEnd }) {
     </div>
   );
 }
+
