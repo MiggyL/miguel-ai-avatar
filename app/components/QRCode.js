@@ -1,6 +1,6 @@
 export default function QRCode() {
   return (
-    
+    <a
       href="https://drive.google.com/file/d/1RyQRN930zeyjLZe2o_J52zWEB1kWyWQF"
       target="_blank"
       rel="noopener noreferrer"
