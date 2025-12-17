@@ -68,7 +68,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#F0F4F8] text-[#1f1f1f]">
-      {/* Top Bar - Light Gemini Style */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -84,13 +83,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-4">
         
-        {/* Avatar Card - Compact */}
         <div className="mb-6 bg-white rounded-2xl p-4 border border-gray-200 shadow-sm relative">
           
-          {/* QR Code - Top Right */}
           
             href="https://drive.google.com/file/d/1RyQRN930zeyjLZe2o_J52zWEB1kWyWQF"
             target="_blank"
@@ -103,7 +99,7 @@ export default function Home() {
               className="w-24 h-24 border-2 border-gray-300 rounded-lg shadow-md bg-white"
             />
           </a>
-        
+
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-1">
               <div className="aspect-[2/3] rounded-xl overflow-hidden">
@@ -148,7 +144,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Chat Area */}
         <div className="space-y-6">
           {messages.length === 0 ? (
             <div className="text-center py-6">
@@ -230,7 +225,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Input Box - Fixed at Bottom */}
         <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-[#F0F4F8] via-[#F0F4F8] to-transparent p-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl border border-gray-300 shadow-lg">
@@ -264,10 +258,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Spacer for fixed input */}
         <div className="h-32"></div>
       </div>
     </div>
   );
 }
-
