@@ -24,19 +24,22 @@ export default function Home() {
 
   const sendMessage = async () => {
     if (!input.trim()) return;
-
+  
     const userMessage = { role: 'user', content: input };
     setMessages([...messages, userMessage]);
     setInput('');
     setIsLoading(true);
-
+  
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ 
+          message: input,
+          model: selectedModel  // ADD THIS LINE
+        }),
       });
-
+  
       const data = await response.json();
       
       setMessages(prev => [...prev, {
@@ -267,6 +270,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
