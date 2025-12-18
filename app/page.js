@@ -25,6 +25,36 @@ export default function Home() {
   const sendMessage = async () => {
     if (!input.trim()) return;
   
+    // Basic input validation
+    if (input.length > 500) {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Your message is too long. Please keep it under 500 characters.'
+      }]);
+      return;
+    }
+  
+    // Detect suspicious patterns
+    const suspiciousPatterns = [
+      /ignore.*previous.*instructions?/i,
+      /disregard.*above/i,
+      /forget.*you.*are/i,
+      /you.*are.*now/i,
+      /new.*instructions?:/i,
+      /system.*prompt/i,
+      /override.*settings?/i,
+    ];
+  
+    const hasSuspiciousContent = suspiciousPatterns.some(pattern => pattern.test(input));
+  
+    if (hasSuspiciousContent) {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'I detected an unusual pattern in your message. Please ask a straightforward question about Miguel\'s qualifications.'
+      }]);
+      return;
+    }
+  
     const userMessage = { role: 'user', content: input };
     setMessages([...messages, userMessage]);
     setInput('');
@@ -45,7 +75,7 @@ export default function Home() {
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: data.message || data.error,
-        model: selectedModel  // ADD THIS LINE - stores which model was used
+        model: selectedModel
       }]);
     } catch (error) {
       console.error('Error:', error);
@@ -288,9 +318,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-
-
