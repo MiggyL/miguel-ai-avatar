@@ -5,16 +5,19 @@ import { useState, useEffect, useRef } from 'react';
 const deployments = [
   {
     name: 'Vercel',
+    url: 'https://miguel-ai.vercel.app/',
     color: 'bg-black',
     textColor: 'text-black'
   },
   {
     name: 'Netlify',
+    url: 'https://miguel-ai.netlify.app/',
     color: 'bg-teal-500',
     textColor: 'text-teal-600'
   },
   {
     name: 'Render',
+    url: 'https://miguel-ai.onrender.com/',
     color: 'bg-purple-500',
     textColor: 'text-purple-600'
   }
@@ -57,6 +60,11 @@ export default function DeploymentSelector() {
   const handleDeploymentSelect = (deployment) => {
     setSelectedDeployment(deployment);
     setIsOpen(false);
+    
+    // Redirect to the selected deployment if it's different from current
+    if (deployment.name !== selectedDeployment?.name) {
+      window.location.href = deployment.url;
+    }
   };
 
   if (!selectedDeployment) return null;
