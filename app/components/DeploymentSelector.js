@@ -20,6 +20,12 @@ const deployments = [
     url: 'https://miguel-ai.onrender.com/',
     color: 'bg-purple-500',
     textColor: 'text-purple-600'
+  },
+  {
+    name: 'Cloudflare',
+    url: 'https://miguel-ai.pages.dev/',
+    color: 'bg-orange-500',
+    textColor: 'text-orange-600'
   }
 ];
 
