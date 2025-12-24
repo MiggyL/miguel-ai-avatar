@@ -26,12 +26,6 @@ const deployments = [
     url: 'https://miguel-ai.pages.dev/',
     color: 'bg-orange-500',
     textColor: 'text-orange-600'
-  },
-  {
-    name: 'GitHub',
-    url: 'https://miggyl.github.io/me/',
-    color: 'bg-black',
-    textColor: 'text-black'
   }
 ];
 
