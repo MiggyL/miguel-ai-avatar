@@ -91,7 +91,8 @@ export default function Home() {
   };
   
   const playVideo = (videoName) => {
-    setCurrentVideo(`/${videoName}.mp4`);
+    const suffix = isAltAvatar ? 'ALT' : '';
+    setCurrentVideo(`/${videoName}${suffix}.mp4`);
   };
   
   const handleVideoEnd = () => {
