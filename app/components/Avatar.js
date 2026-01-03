@@ -18,13 +18,13 @@ export default function Avatar({ isSpeaking, videoToPlay, onVideoEnd, isAltAvata
   // Get video paths based on avatar type
   const getVideoPath = (videoName) => {
     const suffix = isAltAvatar ? 'ALT' : '';
-    return `/me/${videoName}${suffix}.mp4`;
+    return `/${videoName}${suffix}.mp4`;
   };
 
   // Get poster image path based on avatar type
   const getPosterPath = () => {
     const suffix = isAltAvatar ? '-alt' : '';
-    return `/me/idle-poster${suffix}.jpg`;
+    return `/idle-poster${suffix}.jpg`;
   };
 
   useEffect(() => {
